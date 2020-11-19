@@ -59,6 +59,7 @@ module.exports = async function (context, myTimer) {
           });
           context.log('TxData:', JSON.stringify(tx));
         } else {
+          context.log.error('QueueData:', id, ErrorCode.ApplicationError.A001);
           throw new ApplicationError(ErrorCode.ApplicationError.A001);
         }
       } catch (error) {
